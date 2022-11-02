@@ -1,16 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Global Scope */
+:root {
+    --color-primary: #006241;
+    --color-secondary: #d50032;
+    --color-extra: #d4e9e2;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Header */
-
-.starbucks-logo-container {
-    width: 38.7333px;
-    height: 38.7333px;
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+    color: black;
 }
 
-.starbucks-logo-container img {
-    width: 100%;
+a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    margin: 5px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgb(0 0 0/ 10%),
+                0 2px 2px rgb(0 0 0/ 6%),
+                0 0px 2px rgb(0 0 0/ 7%);
+}
+
+.logo_container {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.location {
+    width: 20px;
+    height: 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    text-transform: uppercase;
+    flex: 1;    /*note this*/
+}
+
+.navbar-right {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.navbar-right li:first-child .map {         /*note this*/
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* Button */
+
+.btn {
+    cursor: pointer;
+    background: none;
+    border: 1px #000 solid;
+    border-radius: 50px;
+    padding: 7px 16px;
+    text-align: center;
+    color: #000;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.navbar-right li:nth-child(3) .btn {
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar-right li:nth-child(3) .btn:hover {
+    background-color: #333;
 }
