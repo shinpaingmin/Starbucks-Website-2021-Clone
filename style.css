@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+.starbucks-logo-container {
+    width: 38.7333px;
+    height: 38.7333px;
+}
+
+.starbucks-logo-container img {
+    width: 100%;
+}
