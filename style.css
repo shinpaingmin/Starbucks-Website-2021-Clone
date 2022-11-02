@@ -97,7 +97,7 @@ a:hover {
     font-weight: 400;
 }
 
-.btn:hover {
+.btn:hover, .button-order:hover {
     background-color: rgba(0, 0, 0, 0.06);
 }
 
@@ -110,11 +110,55 @@ a:hover {
     background-color: #333;
 }
 
+/* Hamburger Menu */
+
+.hamburger {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    background: none;
+    border: none;
+    transition: all 0.25s;
+    display: none;
+}
+
+.top, .middle, .bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.middle {
+    transform: translateY(7px);
+}
+
+.bottom {
+    transform: translateY(14px);
+}
+
+.open .top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .middle {
+    display: none;
+}
+
+.open .bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
 /* Box A */
 
 .Box-A {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 30px auto;
     background-color: var(--color-primary);
     text-align: center;
     color: #fff;
@@ -134,8 +178,133 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Box B, C, D, E, F */
+
+.Box-B, .Box-C, .Box-D, .Box-E, .Box-F {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--color-secondary);
+    margin-bottom: 30px;
+    align-items: center;
+    gap: 2em;
+    max-width: 1440px;
+    margin: 30px auto;
+}
+
+.Box-F {
+    align-items: flex-start;
+    background: none;
+    gap: 1em;
+}
+
+.Box-C .img-container, .Box-E .img-container {      /*note this*/
+    order: 2;
+}
+.Box-D {
+    background-color: var(--color-primary);
+}
+
+.content {
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 25px;
+    letter-spacing: 6px;
+   
+    text-transform: uppercase;
+}
+
+.content p {
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.button-order {
+    background: none;
+    padding: 5px 10px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    color: white;
+}
+
+.inner-right {
+    background-color: var(--color-primary);
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.inner-left {
+    background-color: var(--color-extra);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--color-primary);
+    padding: 50px 0;
+}
+
+.inner-left .button-order {
+    border-color: #000;
+    color: #000;
+}
+.inner-left h4, .inner-right h4 {
+    font-weight: bolder;
+}
+
+.inner-left p, .inner-right p {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+footer {
+    padding: 0 30px 30px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+.inner-footer img{
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.divider {
+    width: 95%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 40px auto;
+}
+
 @media (max-width: 960px) {
     .Box-A h1 {
         font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .Box-B, .Box-C, .Box-D, .Box-E, .Box-F {
+        grid-template-columns: 1fr;
+    }
+    .Box-C .img-container, .Box-E .img-container {
+        order: 0;               /*note this*/
+    }
+    .navbar-left, .navbar-right {
+        display: none;
+    }
+    .logo_container {
+        width: 40px;
+        height: 40px;
+    }
+    footer {
+        text-align: center;
     }
 }
