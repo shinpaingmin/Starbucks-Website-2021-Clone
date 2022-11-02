@@ -109,3 +109,33 @@ a:hover {
 .navbar-right li:nth-child(3) .btn:hover {
     background-color: #333;
 }
+
+/* Box A */
+
+.Box-A {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--color-primary);
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.Box-A h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.Box-A p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+    .Box-A h1 {
+        font-size: 30px;
+    }
+}
